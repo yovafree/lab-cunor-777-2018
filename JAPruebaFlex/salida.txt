@@ -1,1 +1,4 @@
-BODA_INI "HOLA", 3, F BODA_FIN
+Lunes
+      11, Break, 20
+Domingo
+      13, Break, Break, 18

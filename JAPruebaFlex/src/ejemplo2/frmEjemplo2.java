@@ -3,8 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package japruebaflex;
-
+package ejemplo2;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -19,12 +18,12 @@ import java.util.logging.Logger;
  *
  * @author Yova
  */
-public class mainLexer extends javax.swing.JFrame {
+public class frmEjemplo2 extends javax.swing.JFrame {
 
     /**
      * Creates new form mainLexer
      */
-    public mainLexer() {
+    public frmEjemplo2() {
         initComponents();
     }
 
@@ -116,12 +115,12 @@ public class mainLexer extends javax.swing.JFrame {
             // Una vez guardad, abrimos el fichero para leerlo
             Reader reader = new BufferedReader(new FileReader(System.getProperty("user.dir")+"/salida.txt"));
             
-            Boda lexer = new Boda(reader);
+            Congreso lexer = new Congreso(reader);
             
             String resultado = "";
             
             while(true){
-                TokenBoda tk = lexer.yylex();
+                CongresoToken tk = lexer.yylex();
                 
                 if (tk == null){
                     resultado = resultado + "EOF";
@@ -139,9 +138,9 @@ public class mainLexer extends javax.swing.JFrame {
             }
             
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(mainLexer.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(frmEjemplo2.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            Logger.getLogger(mainLexer.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(frmEjemplo2.class.getName()).log(Level.SEVERE, null, ex);
         }
        
         
@@ -169,20 +168,21 @@ public class mainLexer extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(mainLexer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmEjemplo2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(mainLexer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmEjemplo2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(mainLexer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmEjemplo2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(mainLexer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmEjemplo2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new mainLexer().setVisible(true);
+                new frmEjemplo2().setVisible(true);
             }
         });
     }
