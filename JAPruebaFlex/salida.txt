@@ -1,1 +1,1 @@
-public static void hola()
+BODA_INI "HOLA", 3, F BODA_FIN

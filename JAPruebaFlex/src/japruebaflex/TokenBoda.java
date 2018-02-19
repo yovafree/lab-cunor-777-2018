@@ -7,8 +7,8 @@ package japruebaflex;
 
 /**
  *
- * @author Yova
+ * @author erwin
  */
-public enum Token {
-    ID, INT, SUMA, RESTA, DIV, MULT, ASSIGN, ERROR, RESERVADA, TIPO_DATO
+public enum TokenBoda {
+    SENTENCIA, PALABRA, GENERO, RESERVA, NUMERO, ERROR
 }

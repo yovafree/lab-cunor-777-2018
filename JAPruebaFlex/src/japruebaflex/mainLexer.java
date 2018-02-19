@@ -116,12 +116,12 @@ public class mainLexer extends javax.swing.JFrame {
             // Una vez guardad, abrimos el fichero para leerlo
             Reader reader = new BufferedReader(new FileReader(System.getProperty("user.dir")+"/salida.txt"));
             
-            Lexer lexer = new Lexer(reader);
+            Boda lexer = new Boda(reader);
             
             String resultado = "";
             
             while(true){
-                Token tk = lexer.yylex();
+                TokenBoda tk = lexer.yylex();
                 
                 if (tk == null){
                     resultado = resultado + "EOF";
@@ -133,11 +133,8 @@ public class mainLexer extends javax.swing.JFrame {
                     case ERROR:
                         resultado=resultado+ "Error, simbolo no reconocido\n";
                         break;
-                    case ID: case INT:
-                        resultado=resultado+ "TOKEN: " + tk + " " + lexer.lexema + "\n";
-                        break;
                     default:
-                        resultado=resultado+ "TOKEN: "+ tk + "\n";
+                        resultado=resultado+ "TOKEN: " + tk + lexer.lexema + "\n";
                 }
             }
             

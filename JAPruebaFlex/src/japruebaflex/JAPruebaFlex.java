@@ -18,7 +18,7 @@ public class JAPruebaFlex {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        String dir = System.getProperty("user.dir")+"/src/japruebaflex/Lexer.flex";
+        String dir = System.getProperty("user.dir")+"/src/japruebaflex/Flex2.lex";
         System.out.println(dir);
         generarLexer(dir);
     }
