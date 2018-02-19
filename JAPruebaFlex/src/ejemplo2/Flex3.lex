@@ -8,6 +8,7 @@ DIA = ("Lunes" | "Martes" | "Miércoles"|"Jueves"|"Viernes"|"Sábado"|"Domingo")
 DESCANSO = "Break"
 SEPARADOR = ","
 WHITE = [ \t\r\n]
+
 %{
 public String lexema;
 %}
