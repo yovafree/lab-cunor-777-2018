@@ -19,4 +19,32 @@ public class NodoBinario {
         this.iz = null;
         this.der = null;
     }
+    
+    public NodoBinario(int valor){
+        this.iz = null;
+        this.valor = valor;
+    }
+    
+    public synchronized void insertar(int valorInsertar)
+	{
+		//insertar en subarbol izquierdo
+		if (valorInsertar < valor){
+
+			//inserta nuevo nodoarbol
+			if (iz == null)
+				iz = new NodoBinario(valorInsertar);
+			else //continua recorriendo subarbol izquierdo
+				iz.insertar(valorInsertar);
+		}
+
+		//insertar nodo derecho
+		else if(valorInsertar > valor){
+
+		//insertar nuevo nodoarbol
+		if (der == null)
+			der = new NodoBinario(valorInsertar);
+		else //continua recorriendo subarbol derecho
+			der.insertar(valorInsertar);
+		}
+	} //fin del metodo insertar
 }

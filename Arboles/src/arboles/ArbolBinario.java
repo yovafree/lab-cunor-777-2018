@@ -18,49 +18,26 @@ public class ArbolBinario {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        arbol = new NodoBinario();
-        arbol.valor = 0;
-        int op = 0;
-        Scanner leer = new Scanner(System.in);
-        while(op != 3){
-            System.out.println("Arbol");
-            System.out.println("1) Ingresar valores");
-            System.out.println("3) Salir");
-            op = leer.nextInt();
-            
-            switch (op){
-                case 1: 
-                    int valor = leer.nextInt();
-                    agregar(valor);
-                    break;
-            }
+        Arbol arbol = new Arbol();
+        int valor;
+
+        System.out.println( "Insertando los siguientes valores: ");
+
+        //insertando 10 numeros aleatorios del 0 al 99 en el arbol
+        for (int i = 1; i<=10 ; i++)
+        {
+                valor = (int) (Math.random() * 100);
+                System.out.print(valor + " ");
+                arbol.insertarNodo(valor);
         }
-    }
-    
-    public static void agregar(int valor){
-        if (arbol.valor == 0){
-            arbol.valor = valor;
-        }else{
-            int salir = 1;
-            NodoBinario nodo = arbol;
-            do{
-                
-                if (valor <= nodo.valor){
-                    nodo = nodo.iz;
-                    if (nodo == null){
-                        nodo = new NodoBinario();
-                        nodo.valor = valor;
-                        salir = 2;
-                    }
-                }else{
-                    nodo = nodo.der;
-                    if (nodo == null){
-                        nodo = new NodoBinario();
-                        nodo.valor = valor;
-                        salir = 2;
-                    }
-                }
-            }while(salir == 1);
-        }
+
+        System.out.println("\n\nRecorrido Preorden");
+        arbol.recorridoPreorden();
+
+        System.out.println("\n\nRecorrido Inorden");
+        arbol.recorridoInorden();
+
+        System.out.println("\n\nRecorrido Posorden");
+        arbol.recorridoPosorden();
     }
 }
